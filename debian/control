@@ -1,0 +1,62 @@
+Source: ngfd
+Section: misc
+Priority: optional
+Maintainer: Robert Irvin <android_808@hotmail.com>
+Build-Depends: debhelper (>= 9),
+ libglib2.0-dev (>= 2.18.0),
+ libdbus-1-dev (>= 1.0.2),
+ libdbus-glib-1-dev,
+ libpulse-dev,
+ libgstreamer1.0-dev,
+ check,
+ mce-dev,
+ libprofile-dev,
+ libcanberra-dev,
+ doxygen
+Standards-Version: 3.9.2
+
+Package: ngfd
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Non-graphic feedback service for sounds and other events.
+ This package contains the daemon servicing the non-graphical feedback
+ requests.
+
+Package: ngfd-plugin-devel
+Section: devel
+Priority: extra
+Architecture: any
+Depends: profiled (= ${binary:Version})
+Description: Non-graphic feedback service for sounds and other events.
+ Development package for ngfd plugin creation.
+
+Package: ngfd-plugin-fake
+Section: libs
+Priority: extra
+Architecture: any
+Depends: ngfd (= ${binary:Version})
+Description: Fake non-graphic feedback plugins.
+ Fake plugins for ngfd testing.
+
+Package: ngfd-settings-basic
+Section: libs
+Priority: extra
+Architecture: any
+Depends: ngfd (= ${binary:Version})
+Description: Example settings for ngfd.
+Provides: ngfd-settings
+
+Package: ngfd-plugin-doc
+Section: doc
+Architecture: all
+Depends: ngfd (= ${binary:Version})
+Description: API documentation for ngfd plugin creation.
+ This package contains documentation to header files for creating plugins
+ to non-graphical feedback daemon.
+
+Package: ngfd-tests
+Section: libs
+Priority: extra
+Architecture: any
+Depends: ngfd (= ${binary:Version}), ngfd-plugin-fake (= ${binary:Version})
+Description: Test suite for ngfd.

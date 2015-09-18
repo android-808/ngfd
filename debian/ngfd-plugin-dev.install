@@ -1,2 +1,2 @@
-debian/tmp/usr/include/ngf/*
-debian/tmp/usr/lib/pkgconfig/ngf-plugin.pc
+usr/include/ngf/*
+usr/lib/*/pkgconfig/ngf-plugin.pc

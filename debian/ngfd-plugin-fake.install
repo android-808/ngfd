@@ -1,2 +1,2 @@
-debian/tmp/usr/lib/ngf/libngfd_fake.so
-debian/tmp/usr/lib/ngf/libngfd_test_fake.so
+usr/lib/*/ngf/libngfd_fake.so
+usr/lib/*/ngf/libngfd_test_fake.so

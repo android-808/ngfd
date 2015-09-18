@@ -22,11 +22,11 @@ Description: Non-graphic feedback service for sounds and other events.
  This package contains the daemon servicing the non-graphical feedback
  requests.
 
-Package: ngfd-plugin-devel
+Package: ngfd-plugin-dev
 Section: devel
 Priority: extra
 Architecture: any
-Depends: profiled (= ${binary:Version})
+Depends: ngfd (= ${binary:Version})
 Description: Non-graphic feedback service for sounds and other events.
  Development package for ngfd plugin creation.
 

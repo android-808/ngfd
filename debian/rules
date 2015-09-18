@@ -13,14 +13,15 @@
 	dh $@
 
 override_dh_auto_configure:
+	NOCONFIGURE=1 ./autogen.sh
 	dh_auto_configure -- --enable-debug
 
 override_dh_auto_install:
 	dh_auto_install
 
-	install -D -m 644 ../rpm/ngfd.service debian/tmp/usr/lib/systemd/user/ngfd.service
+	install -D -m 644 rpm/ngfd.service debian/tmp/usr/lib/systemd/user/ngfd.service
 
 	mkdir -p debian/tmp/usr/lib/systemd/user/user-session.target.wants
 	ln -sf ../ngfd.service debian/tmp/usr/lib/systemd/user/user-session.target.wants/
 	mkdir -p debian/tmp/usr/lib/systemd/user/actdead-session.target.wants
-	ln -s ../ngfd.service mkdir -p debian/tmp/usr/lib/systemd/user/actdead-session.target.wants/
+	ln -s ../ngfd.service debian/tmp/usr/lib/systemd/user/actdead-session.target.wants/
